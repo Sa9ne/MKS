@@ -1,1 +1,56 @@
-/.DS_Store
+.vscode
+.env
+Makefile
+
+# === Flutter ===
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+.pub-cache/
+.pub/
+build/
+
+# Если используешь web-версию
+**/build/web/
+**/build/app/
+**/build/**/
+*.map
+*.js.map
+*.css.map
+*.symbols
+
+# === Logs, Caches ===
+*.log
+*.tmp
+*.swp
+*.swo
+
+# === macOS ===
+.DS_Store
+
+# === Linux ===
+*.pid
+
+# === VSCode & JetBrains IDEs ===
+.vscode/
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# === System & Misc ===
+*.class
+*.pyc
+.atom/
+.history
+.svn/
+.swiftpm/
+migrate_working_dir/
+
+# === iOS / Android (если используешь)
+ios/Flutter/.last_build_id
+android/.gradle/
+android/app/debug/
+android/app/profile/
+android/app/release/

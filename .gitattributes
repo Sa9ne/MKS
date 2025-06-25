@@ -1,0 +1,4 @@
+* linguist-detectable=false
+
+*.go linguist-detectable=true
+*.dart linguist-detectable=true
