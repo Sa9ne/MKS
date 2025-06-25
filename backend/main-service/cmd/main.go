@@ -1,7 +1,8 @@
 package main
 
-import "main-service/main-service/internal/server"
+import "main-service/internal/server"
 
 func main() {
+	// Запуск сервера
 	server.Start()
 }
