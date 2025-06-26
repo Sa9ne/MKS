@@ -1,6 +1,6 @@
 package main
 
-import "main-service/internal/server"
+import "project-service/internal/server"
 
 func main() {
 	// Запуск сервера
