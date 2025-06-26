@@ -1,6 +1,7 @@
 .vscode
 .env
 Makefile
+.idea
 
 # === Flutter ===
 .dart_tool/
