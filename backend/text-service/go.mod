@@ -1,4 +1,4 @@
-module project-service
+module text-service
 
 go 1.24.2
 

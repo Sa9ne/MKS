@@ -2,8 +2,8 @@ package server
 
 import (
 	"log"
-	"project-service/internal/database"
-	"project-service/internal/handlers"
+	"text-service/internal/databases"
+	"text-service/internal/handlers"
 
 	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
@@ -17,7 +17,7 @@ func Start() {
 	s.Use(cors.Default())
 
 	// Подключаемся в бд
-	database.ConnectDB()
+	databases.ConnectDB()
 
 	// Маршрутизация путей
 	s.GET("/LoadProject", handlers.LoadProject)

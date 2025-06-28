@@ -1,9 +1,9 @@
-package database
+package databases
 
 import (
 	"log"
 	"os"
-	"project-service/internal/models"
+	"text-service/internal/models"
 
 	"github.com/joho/godotenv"
 	"gorm.io/driver/postgres"
@@ -34,5 +34,5 @@ func ConnectDB() {
 	}
 
 	// Проводим автомиграцию таблицы в бд
-	DB.AutoMigrate(&models.Project{})
+	DB.AutoMigrate(&models.Project{}, models.StackTech{}, models.AreaOfActivity{})
 }
