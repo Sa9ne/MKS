@@ -21,6 +21,8 @@ func Start() {
 
 	// Маршрутизация путей
 	s.GET("/LoadProject", handlers.LoadProject)
+	s.GET("/LoadStack", handlers.LoadStack)
+	s.GET("/LoadArea", handlers.LoadArea)
 
 	// Выбираем порт работы сервера
 	err := s.Run(":8080")
