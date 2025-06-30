@@ -23,6 +23,7 @@ func Start() {
 	s.GET("/LoadProject", handlers.LoadProject)
 	s.GET("/LoadStack", handlers.LoadStack)
 	s.GET("/LoadArea", handlers.LoadArea)
+	s.GET("/LoadContactInfo", handlers.LoadContactInfo)
 
 	// Выбираем порт работы сервера
 	err := s.Run(":8080")

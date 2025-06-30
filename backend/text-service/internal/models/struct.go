@@ -20,3 +20,13 @@ type StackTech struct {
 	ID        int    `json:"ID" gorm:"primaryKey"`
 	StackName string `json:"StackName"`
 }
+
+// Контактная информация
+type ContactInformation struct {
+	ID          int    `json:"ID" gorm:"primaryKey"`
+	Title       string `json:"Title"`
+	Description string `json:"Description"`
+	PhoneNumber string `json:"PhoneNumber"`
+	Email       string `json:"Email"`
+	Address     string `json:"Address"`
+}
