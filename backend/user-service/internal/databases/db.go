@@ -3,6 +3,7 @@ package databases
 import (
 	"log"
 	"os"
+	"user-service/internal/models"
 
 	"github.com/joho/godotenv"
 	"gorm.io/driver/postgres"
@@ -31,4 +32,6 @@ func ConnectDB() {
 	if errOpen != nil {
 		log.Fatalf("Failed connect database: %v", errOpen)
 	}
+
+	DB.AutoMigrate(models.Feedback{})
 }

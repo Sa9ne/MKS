@@ -3,6 +3,7 @@ package server
 import (
 	"log"
 	"user-service/internal/databases"
+	"user-service/internal/handlers"
 
 	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
@@ -19,6 +20,7 @@ func Start() {
 	databases.ConnectDB()
 
 	// Маршрутизация путей
+	s.POST("/MakeMessage", handlers.MakeMessage)
 
 	// Выбираем порт работы сервера
 	err := s.Run(":8081")
