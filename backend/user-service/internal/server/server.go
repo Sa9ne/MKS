@@ -2,7 +2,6 @@ package server
 
 import (
 	"log"
-	"user-service/internal/databases"
 	"user-service/internal/handlers"
 
 	"github.com/gin-contrib/cors"
@@ -15,9 +14,6 @@ func Start() {
 
 	// Подключаем корс для корректной работы с фронтендом
 	s.Use(cors.Default())
-
-	// Подключаемся в бд
-	databases.ConnectDB()
 
 	// Маршрутизация путей
 	s.POST("/MakeMessage", handlers.MakeMessage)

@@ -33,5 +33,5 @@ func ConnectDB() {
 		log.Fatalf("Failed connect database: %v", errOpen)
 	}
 
-	DB.AutoMigrate(models.Feedback{})
+	DB.AutoMigrate(models.Feedback{}, models.Admin{})
 }
