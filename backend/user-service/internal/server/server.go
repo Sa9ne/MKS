@@ -17,6 +17,7 @@ func Start() {
 
 	// Маршрутизация путей
 	s.POST("/MakeMessage", handlers.MakeMessage)
+	s.POST("/Login", handlers.Login)
 
 	// Выбираем порт работы сервера
 	err := s.Run(":8081")

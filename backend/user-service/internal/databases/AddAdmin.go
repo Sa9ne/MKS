@@ -34,7 +34,8 @@ func CreateAdmin() {
 	Find := DB.Where("username = ?", username).First(&Admin)
 	// Если ошибок в поиске нет, значит запись была найдена, что означает что админ уже создан
 	if Find.Error == nil {
-		log.Fatal("Administrator with this username was created early ✅")
+		log.Println("Administrator with this username was created early ✅")
+		return
 	}
 	// Проверка других ошибок
 	if Find.Error != nil && Find.Error != gorm.ErrRecordNotFound {
