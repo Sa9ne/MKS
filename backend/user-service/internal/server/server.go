@@ -25,7 +25,8 @@ func Start() {
 	AdminRoutes.Use(middleware.AuthMiddleware())
 
 	// Маршрутизация админов
-	AdminRoutes.GET("/CheckMessage", handlers.CheckMessage)
+	AdminRoutes.GET("/CheckMessage", handlers.LoadMessage)
+	AdminRoutes.POST("/ReadMessage/:id", handlers.ReadMessage)
 
 	// Выбираем порт работы сервера
 	err := s.Run(":8081")

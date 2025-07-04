@@ -8,10 +8,10 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-func CheckMessage(ctx *gin.Context) {
+func LoadMessage(ctx *gin.Context) {
 	var Feedback []models.Feedback
 
-	if err := databases.DB.Find(&Feedback).Error; err != nil {
+	if err := databases.DB.Where("read_status = ?", false).Find(&Feedback).Error; err != nil {
 		ctx.JSON(http.StatusNotFound, gin.H{"error": "Feedback was not found"})
 		return
 	}

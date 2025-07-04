@@ -8,6 +8,7 @@ type Feedback struct {
 	PhoneNumber string `json:"PhoneNumber"`
 	TitleTheme  string `json:"TitleTheme"`
 	Message     string `json:"Message"`
+	ReadStatus  bool   `json:"Status" gorm:"default:false"`
 }
 
 // Админ
