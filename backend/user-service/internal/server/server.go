@@ -3,6 +3,7 @@ package server
 import (
 	"log"
 	"user-service/internal/handlers"
+	"user-service/internal/middleware"
 
 	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
@@ -18,6 +19,13 @@ func Start() {
 	// Маршрутизация путей
 	s.POST("/MakeMessage", handlers.MakeMessage)
 	s.POST("/Login", handlers.Login)
+
+	// Настройка администратора
+	AdminRoutes := s.Group("/admin")
+	AdminRoutes.Use(middleware.AuthMiddleware())
+
+	// Маршрутизация админов
+	AdminRoutes.GET("/CheckMessage", handlers.CheckMessage)
 
 	// Выбираем порт работы сервера
 	err := s.Run(":8081")

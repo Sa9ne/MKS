@@ -16,11 +16,6 @@ import (
 // Читаем JWT токен
 var jwtKey = []byte(os.Getenv("JWT_SECRET"))
 
-type Claims struct {
-	Username string `json:"Username"`
-	jwt.RegisteredClaims
-}
-
 func Login(ctx *gin.Context) {
 	var Input models.Admin
 
@@ -47,7 +42,7 @@ func Login(ctx *gin.Context) {
 	JWTLifeTime := time.Now().Add(30 * 24 * time.Hour)
 
 	// Создаём token
-	claims := &Claims{
+	claims := &models.Claims{
 		Username: Admin.Username,
 		RegisteredClaims: jwt.RegisteredClaims{
 			ExpiresAt: jwt.NewNumericDate(JWTLifeTime),
